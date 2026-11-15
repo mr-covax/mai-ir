@@ -1,0 +1,149 @@
+db:
+  uri: mongodb://localhost:27017/?replicaSet=rs0&directConnection=true
+  name: crawler
+
+logic:
+  request_delay_seconds: 2
+  timeout_seconds: 30
+  revisit_after_seconds: 86400
+
+sources:
+  - name: linux-kernel
+    request_delay_seconds: 3
+    seeds:
+      - https://docs.kernel.org/
+    include_paths:
+      - /
+    exclude_paths:
+      - /translations/
+      - /_static/
+      - /_sources/
+      - /search.html
+      - /genindex.html
+
+  - name: cppreference
+    seeds:
+      - https://en.cppreference.com/cpp
+      - https://en.cppreference.com/c
+    include_paths:
+      - /cpp/
+      - /c/
+      - /w/cpp/
+      - /w/c/
+
+  - name: freebsd-docs
+    seeds:
+      - https://docs.freebsd.org/en/books/
+      - https://docs.freebsd.org/en/articles/
+    include_paths:
+      - /en/books/
+      - /en/articles/
+
+  - name: glibc
+    request_delay_seconds: 5
+    seeds:
+      - https://sourceware.org/glibc/manual/latest/html_node/index.html
+    include_paths:
+      - /glibc/manual/latest/html_node/
+
+  - name: gcc
+    seeds:
+      - https://gcc.gnu.org/onlinedocs/gcc-16.2.0/gcc/
+      - https://gcc.gnu.org/onlinedocs/gcc-16.2.0/cpp/
+      - https://gcc.gnu.org/onlinedocs/gcc-16.2.0/gccint/
+      - https://gcc.gnu.org/onlinedocs/gcc-16.2.0/cppinternals/
+      - https://gcc.gnu.org/onlinedocs/gcc-16.2.0/libgomp/
+      - https://gcc.gnu.org/onlinedocs/gcc-16.2.0/libstdc++/manual/
+      - https://gcc.gnu.org/onlinedocs/gcc-16.2.0/libstdc++/api/
+    include_paths:
+      - /onlinedocs/gcc-16.2.0/gcc/
+      - /onlinedocs/gcc-16.2.0/cpp/
+      - /onlinedocs/gcc-16.2.0/gccint/
+      - /onlinedocs/gcc-16.2.0/cppinternals/
+      - /onlinedocs/gcc-16.2.0/libgomp/
+      - /onlinedocs/gcc-16.2.0/libstdc++/
+
+  - name: binutils
+    seeds:
+      - https://sourceware.org/binutils/docs/as/index.html
+      - https://sourceware.org/binutils/docs/bfd/index.html
+      - https://sourceware.org/binutils/docs/binutils/index.html
+      - https://sourceware.org/binutils/docs/ld/index.html
+      - https://sourceware.org/binutils/docs/gprof/index.html
+    include_paths:
+      - /binutils/docs/as/
+      - /binutils/docs/bfd/
+      - /binutils/docs/binutils/
+      - /binutils/docs/ld/
+      - /binutils/docs/gprof/
+
+  - name: gdb
+    seeds:
+      - https://sourceware.org/gdb/current/onlinedocs/gdb.html/
+    include_paths:
+      - /gdb/current/onlinedocs/gdb.html/
+
+  - name: llvm
+    seeds:
+      - https://llvm.org/docs/
+    include_paths:
+      - /docs/
+    exclude_paths:
+      - /docs/_static/
+      - /docs/_sources/
+      - /docs/search.html
+      - /docs/genindex.html
+
+  - name: clang
+    seeds:
+      - https://clang.llvm.org/docs/
+    include_paths:
+      - /docs/
+    exclude_paths:
+      - /docs/_static/
+      - /docs/_sources/
+      - /docs/search.html
+      - /docs/genindex.html
+
+  - name: lld
+    seeds:
+      - https://lld.llvm.org/
+    exclude_paths:
+      - /_static/
+      - /_sources/
+      - /search.html
+      - /genindex.html
+
+  - name: lldb
+    seeds:
+      - https://lldb.llvm.org/
+    exclude_paths:
+      - /_static/
+      - /_sources/
+      - /search.html
+      - /genindex.html
+
+  - name: llvm-libc
+    seeds:
+      - https://libc.llvm.org/
+    exclude_paths:
+      - /_static/
+      - /_sources/
+      - /search.html
+      - /genindex.html
+
+  - name: llvm-libcxx
+    seeds:
+      - https://libcxx.llvm.org/
+    exclude_paths:
+      - /_static/
+      - /_sources/
+      - /search.html
+      - /genindex.html
+
+  - name: man7
+    seeds:
+      - https://man7.org/linux/man-pages/dir_all_alphabetic.html
+    include_paths:
+      - /linux/man-pages/man2/
+      - /linux/man-pages/man3/

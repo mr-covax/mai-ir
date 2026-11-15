@@ -1,0 +1,13 @@
+set positional-arguments
+
+default:
+    @just --list
+
+run corpus="data/programming-v1":
+    uv run --locked python tools/analyze.py "{{corpus}}"
+
+export *args:
+    uv run --locked python tools/corpus.py "$@"
+
+import-data *args:
+    uv run --locked python tools/build_dataset.py "$@"

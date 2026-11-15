@@ -1,0 +1,18 @@
+db:
+  uri: mongodb://localhost:27017/?replicaSet=rs0&directConnection=true
+  name: ir_crawler_validation
+logic:
+  request_delay_seconds: 1
+  timeout_seconds: 30
+  revisit_after_seconds: 0
+sources:
+  - name: linux-kernel
+    seeds:
+      - https://docs.kernel.org/core-api/memory-allocation.html
+    include_paths:
+      - /core-api/memory-allocation.html
+  - name: man7
+    seeds:
+      - https://man7.org/linux/man-pages/man2/mprotect.2.html
+    include_paths:
+      - /linux/man-pages/man2/mprotect.2.html

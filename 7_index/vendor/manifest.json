@@ -1,0 +1,15 @@
+{
+  "stemmer": {
+    "files": {
+      "stem.cpp": "1364621b1967569881eb477a23e05163571d371cffced72eda99fe4c4a9da0f8",
+      "stem.hpp": "256daea20f64485786c6db2f94c54ed5c381519a2cc7d9e714969ac9673b5fa9"
+    }
+  },
+  "tokenizer": {
+    "files": {
+      "tokenizer.cpp": "051db17715a25cd0806774022c2befc922cc3d025220d92ab802752a1ded2426",
+      "tokenizer.hpp": "388742ba4bc1b296ad140d78d304e7201813ca1224d9c591d3d69765f4dc9f59",
+      "unicode_data.hpp": "a6264e8c92169d6123a0d8dc4d24e6ad3f90a21b4f606da8c053efd9a61096b1"
+    }
+  }
+}

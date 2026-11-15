@@ -1,0 +1,16 @@
+{
+  "tokenizer": {
+    "files": {
+      "tokenizer.cpp": "051db17715a25cd0806774022c2befc922cc3d025220d92ab802752a1ded2426",
+      "tokenizer.hpp": "388742ba4bc1b296ad140d78d304e7201813ca1224d9c591d3d69765f4dc9f59",
+      "unicode_data.hpp": "a6264e8c92169d6123a0d8dc4d24e6ad3f90a21b4f606da8c053efd9a61096b1"
+    }
+  },
+  "wordnet": {
+    "files": {
+      "LICENSE.WordNet": "7731175a77952e259390b496fab905e57118b8d19ad3a8383c67eee724ff443f",
+      "lexicon.bin": "9af9982798247993abf13115b0f33fa245dd26da1d8cb36b6b64ee1d11ba9a33",
+      "lexicon.json": "e2808437b8d772aa89a4d84a881b3c3f700409271d481e5c483b8803c5f74055"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+default:
+    @just --list
+
+run frequencies output:
+    uv run --locked python tools/zipf.py "{{frequencies}}" "{{output}}"

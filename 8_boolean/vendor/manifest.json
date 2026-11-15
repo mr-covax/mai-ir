@@ -1,0 +1,26 @@
+{
+  "index": {
+    "files": {
+      "base.cpp": "edd523a6847b6e02e4904b8fe9b537670f6c6803f54c1df4775b31cdd0eef3fd",
+      "base.hpp": "ef36b8ab9149c8b1503046d9babe6f8da3b44442cff0dc4747e64479abfd4bd1",
+      "index.cpp": "62495f597d392e7f7680ee08fe70f7875a1e88bd011dc9b31d9ca7f924118836",
+      "index.hpp": "49319891fc1dae5105c78856286a5254e9259179f1d287e992bf4d2227ad917b",
+      "main.cpp": "0bd7b1ec4cfeb1dcba006ea14071aba5d6fffe83da008bc5000fc6b97e230c9b",
+      "output.hpp": "32d8b23fc86fa27da660c7a1fb4c76926e491f2f0484198d5d57ca2c42e1cf5f",
+      "tokens.cpp": "ecd2e4cfdc9ac5b956d2b0410474a03854e201d45dd0348f2498777acde01110"
+    }
+  },
+  "stemmer": {
+    "files": {
+      "stem.cpp": "1364621b1967569881eb477a23e05163571d371cffced72eda99fe4c4a9da0f8",
+      "stem.hpp": "256daea20f64485786c6db2f94c54ed5c381519a2cc7d9e714969ac9673b5fa9"
+    }
+  },
+  "tokenizer": {
+    "files": {
+      "tokenizer.cpp": "051db17715a25cd0806774022c2befc922cc3d025220d92ab802752a1ded2426",
+      "tokenizer.hpp": "388742ba4bc1b296ad140d78d304e7201813ca1224d9c591d3d69765f4dc9f59",
+      "unicode_data.hpp": "a6264e8c92169d6123a0d8dc4d24e6ad3f90a21b4f606da8c053efd9a61096b1"
+    }
+  }
+}

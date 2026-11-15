@@ -1,0 +1,29 @@
+[project]
+name = "tokenizer"
+version = "0.3.0"
+description = "Text extraction and tokenization for a systems programming corpus"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "lxml>=5,<7",
+    "pydantic>=2.14.1",
+    "pymongo>=4.13",
+]
+
+[project.scripts]
+extract-text = "tokenizer.cli:main"
+export-corpus = "tokenizer.cli:export_main"
+tokenize-corpus = "tokenizer.cli:corpus_main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

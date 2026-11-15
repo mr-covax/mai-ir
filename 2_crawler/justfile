@@ -1,0 +1,13 @@
+set positional-arguments
+
+default:
+    @just --list
+
+run config="config.yaml":
+    uv run --locked crawler "{{config}}"
+
+test:
+    uv run --locked pytest -q tests
+
+mongo:
+    docker compose up -d --wait
