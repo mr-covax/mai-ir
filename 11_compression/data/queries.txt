@@ -1,0 +1,30 @@
+memory allocation
+memory allocations
+mutex locking
+spinlocks
+workqueues
+reference counting
+memory mappings
+mprotect
+fork
+execve
+waiting children
+pipes
+file descriptors
+synchronous writes
+epoll events
+sockets
+accept connections
+futex
+CPU affinity
+resource limits
+pthread_create
+malloc
+memory copies
+memory overlapping
+printf
+dlopen
+huge pages
+cgroup memory
+kernel sanitizers
+epolll

@@ -1,0 +1,81 @@
+/.venv/
+/build*/
+/data/
+**/__pycache__/
+
+# Python bytecode and compiled extensions
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Test, coverage, and analysis caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# Notebook checkpoints and local environment settings
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+
+# C and C++ compiled artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.lo
+*.la
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.pdb
+*.ilk
+*.pch
+*.gch
+
+# CMake generated files and build directories
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+install_manifest.txt
+compile_commands.json
+
+# Ninja build metadata
+.ninja_deps
+.ninja_log
+/1_corpus/data/
+
+# Authored reports and evaluation inputs are versioned. Run outputs stay local.
+/reports/**
+!/reports/**/
+!/reports/**/*.html
+!/reports/**/*.tex
+!/reports/6_evaluation/full/assessments.tsv
+!/reports/6_evaluation/full/pool.json
+/reports/6_evaluation/full/tantivy/
+/2_crawler/reports

@@ -1,0 +1,44 @@
+% Оформление основано на report_pattern курса MAI-IR.
+% Уведомление об авторских правах шаблона: styles/template-license.txt.
+\documentclass[12pt,a4paper,oneside,fleqn]{article}
+\usepackage{styles/log-style}
+\usepackage{booktabs,tabularx,caption,float}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{microtype}
+\hypersetup{unicode=true,hidelinks,pdftitle={Отчёт по информационному поиску},pdfauthor={Книга Тимофей Сергеевич}}
+\setlength{\emergencystretch}{3em}
+\setcounter{tocdepth}{2}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\arraystretch}{1.18}
+\lstset{basicstyle=\small\ttfamily,numbers=none,frame=single,breaklines=true,showstringspaces=false,escapechar={},language={},columns=fullflexible}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\lab}[2]{\clearpage\section{Лабораторная работа №#1 «#2»}}
+\newcommand{\task}{\subsection*{Задание}}
+\newcommand{\method}{\subsection{Описание метода решения}}
+\newcommand{\journal}{\subsection{Журнал выполнения}}
+\newcommand{\testing}{\subsection{План тестирования и автотесты}}
+\newcommand{\results}{\subsection{Результаты}}
+\newcommand{\conclusions}{\subsection{Выводы}}
+\input{src/settings}
+\begin{document}
+\input{src/titlepage}
+\tableofcontents
+\clearpage
+\input{src/introduction}
+\input{src/lab01}
+\input{src/lab02}
+\input{src/lab03}
+\input{src/lab04}
+\input{src/lab05}
+\input{src/lab06}
+\input{src/lab07}
+\input{src/lab08}
+\input{src/lab10}
+\input{src/lab11}
+\input{src/lab12}
+\input{src/lab13}
+\input{src/lab17}
+\input{src/reproduction}
+\input{src/literature}
+\end{document}

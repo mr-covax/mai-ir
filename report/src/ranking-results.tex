@@ -1,0 +1,12 @@
+\begin{table}[H]\centering
+\begin{tabular}{lrr}\toprule
+Запрос & Строгий поиск & rank (ИЛИ)\\\midrule
+\code{memory allocation} & 36\,917 & 282\,185\\
+\code{mutex locking} & 3\,230 & 30\,501\\
+\code{waiting children} & 7\,543 & 216\,266\\
+\code{file descriptors} & 16\,623 & 753\,972\\
+\code{memory copies} & 85\,345 & 545\,106\\
+\code{epolll} & 0 & 0\\
+\bottomrule\end{tabular}
+\caption{Число кандидатов в выдачах строгого и ранжированного поиска.}
+\end{table}

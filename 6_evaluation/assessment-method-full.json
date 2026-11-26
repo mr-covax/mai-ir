@@ -1,0 +1,41 @@
+{
+  "assessor": "assistant",
+  "independent_human_assessors": 0,
+  "scale": {
+    "0": "irrelevant",
+    "1": "background or insufficient text",
+    "2": "useful partial answer",
+    "3": "direct answer or primary API reference"
+  },
+  "relevant_minimum": 2,
+  "method": "Explicit per-query editorial assessment of all 426 pooled top-5 query/document pairs using query intents, stored titles and source text excerpts; targeted API passages checked for ambiguous long documents. Previous reference judgments preserved outside the pool. No automatic zero grades for unjudged documents.",
+  "exhaustive_corpus_judgments": false,
+  "scope": "Only these saved top-5 runs; not a ground truth for arbitrary future runs",
+  "pool_pairs": 426,
+  "corpus": {
+    "path": "1_corpus/data/programming-large/corpus.bin",
+    "bytes": 17433701772,
+    "documents": 1679971,
+    "sha256": "af0744d23c67cd509378b900584fcef60108cb8af89ba0a585265e88e70b2b26"
+  },
+  "files_sha256": {
+    "queries.tsv": "46ae6d2e5e0960dc684071179d333070ddf81f8124541eb2bade6dfee889c2a9",
+    "intents.tsv": "cdd066dba1c4dfd88a58071cd932c943cd1ea7b3391f9de1dd256e4defe9a695",
+    "qrels.tsv": "fd4ebcef4bb2e9392aeee2804495487fbe50b21a76a2f37ef20d5ac4e041d7d8",
+    "runs-full.tsv": "87ca6237e9cb3a9961a5339173c8c5f5c74e0746432c002e53f0ea9b707522d0",
+    "assessments-full.jsonl": "40c63c6a1fd8445f02cacb20fd211dfae2cb2b7a541529492a4b98d392e13359"
+  },
+  "systems": {
+    "native-boolean": "Lab 10, WordNet lemma, strict Boolean/AND, first five results",
+    "current-full-tfidf": "Lab 13, WordNet lemma, TF-IDF ranked fuzzy OR, first five results",
+    "sqlite-fts5": "SQLite FTS5 BM25, OR terms, full-corpus saved baseline",
+    "tantivy": "Tantivy BM25, OR terms, full-corpus saved baseline"
+  },
+  "native_runs_rechecked": true,
+  "baseline_build": {
+    "documents": 1679971,
+    "elapsed_seconds": 461.15197006700146,
+    "sqlite_version": "3.46.1",
+    "tantivy_version": "tantivy v0.27.0, index_format v7"
+  }
+}

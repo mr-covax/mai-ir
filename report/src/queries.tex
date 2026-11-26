@@ -1,0 +1,35 @@
+\begin{longtable}{lp{0.28\textwidth}p{0.51\textwidth}}
+\toprule ID & Запрос & Информационная потребность\\\midrule\endfirsthead
+\toprule ID & Запрос & Информационная потребность\\\midrule\endhead
+q01 & \code{memory allocation} & Как выделять память в Linux и libc?\\
+q02 & \code{memory allocations} & Тот же запрос во множественном числе; устойчивость к словоформе.\\
+q03 & \code{mutex locking} & Как блокировать mutex в ядре и pthreads?\\
+q04 & \code{spinlocks} & Как работают spinlock и когда их применять?\\
+q05 & \code{workqueues} & Как планировать отложенную работу через workqueue?\\
+q06 & \code{reference counting} & Как вести счётчик ссылок и не допустить use-after-free?\\
+q07 & \code{memory mappings} & Как отображать и снимать отображение памяти?\\
+q08 & \code{mprotect} & Как изменить права доступа к страницам памяти?\\
+q09 & \code{fork} & Как создать дочерний процесс через fork?\\
+q10 & \code{execve} & Как заменить образ процесса через execve?\\
+q11 & \code{waiting children} & Как дождаться завершения дочерних процессов?\\
+q12 & \code{pipes} & Как передавать данные через pipe?\\
+q13 & \code{file descriptors} & Как открывать, дублировать и обслуживать файловые дескрипторы?\\
+q14 & \code{synchronous writes} & Как гарантировать запись данных на носитель?\\
+q15 & \code{epoll events} & Как получать уведомления готовности epoll?\\
+q16 & \code{sockets} & Как создать и использовать сетевые сокеты?\\
+q17 & \code{accept connections} & Как принимать входящие соединения?\\
+q18 & \code{futex} & Как устроена синхронизация через futex?\\
+q19 & \code{CPU affinity} & Как привязать задачу или прерывание к CPU?\\
+q20 & \code{resource limits} & Как установить ограничения ресурсов процесса?\\
+q21 & \code{pthread_create} & Как создать POSIX-поток? Точное имя API.\\
+q22 & \code{malloc} & Как выделять память через malloc? Точное имя API.\\
+q23 & \code{memory copies} & Как копировать блоки памяти?\\
+q24 & \code{memory overlapping} & Как безопасно копировать перекрывающиеся области памяти?\\
+q25 & \code{printf} & Как форматировать вывод? Точное имя API.\\
+q26 & \code{dlopen} & Как загрузить разделяемую библиотеку? Точное имя API.\\
+q27 & \code{huge pages} & Как использовать huge pages?\\
+q28 & \code{cgroup memory} & Как ограничить память через cgroup v2?\\
+q29 & \code{kernel sanitizers} & Как обнаружить ошибки памяти и гонки в ядре?\\
+q30 & \code{epolll} & Опечатка в epoll; ожидается пустая выдача без коррекции.\\
+\bottomrule
+\end{longtable}

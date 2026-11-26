@@ -1,0 +1,7 @@
+corpus = ../1_corpus/data/programming-large/corpus.bin
+output = build/positional.idx
+
+codec = vb
+memory_mib = 2048
+skip_stride = 64
+mode = lemma

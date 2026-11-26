@@ -1,0 +1,6 @@
+.venv/
+build*/
+/data/*
+!/data/train.txt
+!/data/test.txt
+__pycache__/

@@ -1,0 +1,19 @@
+corpus = ../1_corpus/data/programming-large/corpus.bin
+output = build/ranked.idx
+
+codec = vb
+memory_mib = 2048
+skip_stride = 64
+mode = lemma
+
+search_limit = 5
+search_offset = 0
+search_engine = rank
+traversal = skip
+
+host = 0.0.0.0
+port = 8080
+
+experiment_output = data/measurement
+queries = data/queries.txt
+repeats = 7

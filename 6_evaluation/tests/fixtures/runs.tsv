@@ -1,0 +1,6 @@
+fixture-forward	q1	1	https://example.test/relevant
+fixture-forward	q1	2	https://example.test/partial
+fixture-forward	q1	3	https://example.test/irrelevant
+fixture-reverse	q1	1	https://example.test/irrelevant
+fixture-reverse	q1	2	https://example.test/partial
+fixture-reverse	q1	3	https://example.test/relevant

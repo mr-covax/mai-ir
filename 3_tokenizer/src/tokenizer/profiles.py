@@ -51,7 +51,7 @@ SOURCES = {
     "llvm": SPHINX,
     "clang": SPHINX.model_copy(update={"roots": ('[role="main"]', "#content")}),
     "lld": SPHINX,
-    "lldb": SPHINX,
+    "lldb": SPHINX.model_copy(update={"roots": ('[role="main"]', "#doc-content")}),
     "llvm-libc": SPHINX,
     "llvm-libcxx": SPHINX,
     "gcc": GNU,

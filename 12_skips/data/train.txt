@@ -1,0 +1,15 @@
+memory allocation
+mutex locking
+workqueues
+memory mappings
+fork
+waiting children
+file descriptors
+epoll events
+accept connections
+CPU affinity
+pthread_create
+memory copies
+printf
+huge pages
+kernel sanitizers

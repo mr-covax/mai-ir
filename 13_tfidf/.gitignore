@@ -1,0 +1,5 @@
+.venv/
+build*/
+/data/*
+!/data/queries.txt
+__pycache__/

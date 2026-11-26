@@ -1,0 +1,11 @@
+corpus = ../1_corpus/data/programming-large/corpus.bin
+output = build/boolean.idx
+
+mode = stem
+memory_mib = 64
+
+search_limit = 50
+search_offset = 0
+
+host = 0.0.0.0
+port = 8080

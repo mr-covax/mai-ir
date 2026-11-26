@@ -1,0 +1,54 @@
+{
+  "boolean": {
+    "files": {
+      "main.cpp": "fc2606c6b4c034050eae5ee69168126fedf59a528a77286d943953b819e7d192",
+      "query.cpp": "e7f583476ca18a9e5186e5b308e8c2ee8498156fbe010d1b4f4f3ad30ff4e802",
+      "query.hpp": "eb8c28227084db61a470c314dcdd010a20cc22e1281de1e705d18eaf90edba90",
+      "search.cpp": "8172f6058b0f541210d6fda3fff8059c3f4c0caadb0722e9e9df484926cfc3ca",
+      "search.hpp": "bc2aa2eaae58da3fedb5db937d64f49a1e2b3976ff4e77fa5c8874fe1851dbab"
+    }
+  },
+  "index": {
+    "files": {
+      "base.cpp": "edd523a6847b6e02e4904b8fe9b537670f6c6803f54c1df4775b31cdd0eef3fd",
+      "base.hpp": "ef36b8ab9149c8b1503046d9babe6f8da3b44442cff0dc4747e64479abfd4bd1",
+      "index.cpp": "62495f597d392e7f7680ee08fe70f7875a1e88bd011dc9b31d9ca7f924118836",
+      "index.hpp": "49319891fc1dae5105c78856286a5254e9259179f1d287e992bf4d2227ad917b",
+      "main.cpp": "0bd7b1ec4cfeb1dcba006ea14071aba5d6fffe83da008bc5000fc6b97e230c9b",
+      "output.hpp": "32d8b23fc86fa27da660c7a1fb4c76926e491f2f0484198d5d57ca2c42e1cf5f",
+      "tokens.cpp": "ecd2e4cfdc9ac5b956d2b0410474a03854e201d45dd0348f2498777acde01110"
+    }
+  },
+  "positions": {
+    "files": {
+      "build.cpp": "c5eb73762db3941cfb692d636fa655f830bfba346eb05f04c40a8f67ddba06af",
+      "index.cpp": "0ae69ec554194009fcae5d1085cb1323dc16aee5040a740df431fc83afe3de0b",
+      "index.hpp": "c0206e3960fa1ee74a82343c75096696f0da1879530183a884ebf665ffac8490",
+      "linguistics.cpp": "79994e4b2ded43eda2c690a9944803d4800dde1d0f84d720d9de4573059b0b42",
+      "linguistics.hpp": "1dfa83261bb1bb60e142bc96bfad6d74ac9d3f1db7a66a2f731536ee7068e930",
+      "search.cpp": "3bba671323c9a5aaba5e364b5c3d10a0537d0fa53828b1586d05309631c94b30"
+    }
+  },
+  "stemmer": {
+    "files": {
+      "stem.cpp": "1364621b1967569881eb477a23e05163571d371cffced72eda99fe4c4a9da0f8",
+      "stem.hpp": "256daea20f64485786c6db2f94c54ed5c381519a2cc7d9e714969ac9673b5fa9"
+    }
+  },
+  "tokenizer": {
+    "files": {
+      "tokenizer.cpp": "051db17715a25cd0806774022c2befc922cc3d025220d92ab802752a1ded2426",
+      "tokenizer.hpp": "388742ba4bc1b296ad140d78d304e7201813ca1224d9c591d3d69765f4dc9f59",
+      "unicode_data.hpp": "a6264e8c92169d6123a0d8dc4d24e6ad3f90a21b4f606da8c053efd9a61096b1"
+    }
+  },
+  "wordnet": {
+    "files": {
+      "LICENSE.WordNet": "7731175a77952e259390b496fab905e57118b8d19ad3a8383c67eee724ff443f",
+      "lemma.cpp": "9791680e62c872f0b860a18a1fd26881ea1a022684cb84a9f8ea2f216aa4bbad",
+      "lemma.hpp": "55027e22530fb35845f93b1f2b73d0c2f1e599ff46edd070999b8babeddc1db0",
+      "lexicon.bin": "9af9982798247993abf13115b0f33fa245dd26da1d8cb36b6b64ee1d11ba9a33",
+      "lexicon.json": "e2808437b8d772aa89a4d84a881b3c3f700409271d481e5c483b8803c5f74055"
+    }
+  }
+}

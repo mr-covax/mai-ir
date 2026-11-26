@@ -1,0 +1,9 @@
+{
+  "version": "WordNet 3.0",
+  "entries": 77503,
+  "exceptions": 5643,
+  "maximum_length": 31,
+  "dictionary_id": 355070354,
+  "source_sha256": "640db279c949a88f61f851dd54ebbb22d003f8b90b85267042ef85a3781d3a52",
+  "dictionary_sha256": "9af9982798247993abf13115b0f33fa245dd26da1d8cb36b6b64ee1d11ba9a33"
+}

@@ -1,0 +1,13 @@
+\begin{table}[H]\centering
+\begin{tabular}{lrr}\toprule
+Запрос & Совпадений & Время, мс\\\midrule
+\code{memory allocation} & 36\,917 & 233,170\\
+\code{mutex locking} & 3\,230 & 24,931\\
+\code{workqueues} & 43 & 0,106\\
+\code{mprotect} & 621 & 0,325\\
+\code{file descriptors} & 16\,623 & 234,695\\
+\code{kernel sanitizers} & 35 & 3,519\\
+\code{epolll} & 0 & 0,067\\
+\bottomrule\end{tabular}
+\caption{Одиночные поисковые замеры координатного движка по полному корпусу; это не среднее нескольких повторов.}
+\end{table}

@@ -2,12 +2,13 @@ import argparse
 import html
 import json
 import subprocess
+from configparser import ConfigParser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urlsplit
 
 
-def serve(binary, index, host, port):
+def serve(binary, index, host, port, *, page_size=50):
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             address = urlsplit(self.path)
@@ -31,9 +32,10 @@ def serve(binary, index, host, port):
             results = ""
             status = 200
             if query:
+                offset = page * page_size
                 try:
                     response = subprocess.run(
-                        [str(binary), str(index), "50", str(page * 50)],
+                        [str(binary), str(index), str(page_size), str(offset)],
                         input=query + "\n",
                         capture_output=True,
                         text=True,
@@ -45,13 +47,13 @@ def serve(binary, index, host, port):
                         status = 400
                         results = f"<p>{html.escape(data.get('error', 'Ошибка запроса'))}</p>"
                     else:
-                        results = f'<p>Найдено: {data["total"]}</p><ol start="{page * 50 + 1}">'
+                        results = f'<p>Найдено: {data["total"]}</p><ol start="{offset + 1}">'
                         for item in data["results"]:
                             if urlsplit(item["url"]).scheme in {"https", "http"}:
                                 results += f'<li><a href="{html.escape(item["url"], quote=True)}">{html.escape(item["title"] or item["url"])}</a></li>'
                         results += "</ol>"
-                        if (page + 1) * 50 < data["total"]:
-                            results += f'<a href="/search?{html.escape(urlencode(dict(q=query, page=page + 1)), quote=True)}">Следующие 50</a>'
+                        if offset + page_size < data["total"]:
+                            results += f'<a href="/search?{html.escape(urlencode(dict(q=query, page=page + 1)), quote=True)}">Следующие {page_size}</a>'
                 except (OSError, ValueError, subprocess.TimeoutExpired):
                     self.send_error(500, "Search failed")
                     return
@@ -65,14 +67,30 @@ def serve(binary, index, host, port):
             self.end_headers()
             self.wfile.write(content)
 
-    ThreadingHTTPServer((host, port), Handler).serve_forever()
+    with ThreadingHTTPServer((host, port), Handler) as server:
+        print(f"Поиск запущен на http://{host}:{server.server_port}", flush=True)
+        server.serve_forever()
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("index", type=Path)
+    parser.add_argument("index", type=Path, nargs="?")
     parser.add_argument("--binary", type=Path, default=Path("build/boolean"))
-    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8080)
+    parser.add_argument("--page-size", type=int, default=50)
     args = parser.parse_args()
-    serve(args.binary.resolve(strict=True), args.index.resolve(strict=True), args.host, args.port)
+    if args.index is None:
+        config = ConfigParser(interpolation=None)
+        config.read_string("[lab]\n" + Path("config").read_text(encoding="utf-8"))
+        settings = config["lab"]
+        args.index = Path(settings["output"].strip('"'))
+        args.host = settings["host"]
+        args.port = settings.getint("port")
+        args.page_size = settings.getint("search_limit")
+    if args.page_size < 1:
+        parser.error("--page-size must be positive")
+    if not 0 <= args.port <= 65535:
+        parser.error("--port must be between 0 and 65535")
+    serve(args.binary.resolve(strict=True), args.index.resolve(strict=True),
+          args.host, args.port, page_size=args.page_size)

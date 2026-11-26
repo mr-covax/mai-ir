@@ -1,0 +1,42 @@
+set shell := ["bash", "-euo", "pipefail", "-c"]
+set positional-arguments
+
+default:
+    @just --list
+
+build:
+    cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
+    cmake --build build --parallel 2
+
+test:
+    cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
+    cmake --build build --parallel 2
+    ctest --test-dir build --output-on-failure
+    python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+run *args: build
+    ./build/evaluate "$@"
+
+# Saved full-corpus runs and explicitly reviewed relevance labels; no index required.
+evaluate-full:
+    python3 tools/evaluate_full.py
+
+plot-full: evaluate-full
+    uv run --locked python tools/plots.py metrics data/full/metrics.json data/full/plots
+    uv run --locked python tools/plots.py coverage runs-full.tsv data/full/qrels.tsv data/full/plots
+
+# Synthetic, fully judged fixture: demonstrates metrics, not corpus search quality.
+demo:
+    ./build/evaluate tests/fixtures/queries.tsv tests/fixtures/qrels.tsv tests/fixtures/runs.tsv
+
+baseline corpus queries output:
+    uv run --locked python tools/full_baselines.py "{{corpus}}" "{{queries}}" "{{output}}"
+
+plot metrics output="data/plots":
+    uv run --locked python tools/plots.py metrics "$1" "$2"
+
+plot-coverage runs qrels output="data/plots":
+    uv run --locked python tools/plots.py coverage "$1" "$2" "$3"
+
+clean:
+    rm -rf build

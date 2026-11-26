@@ -1,0 +1,15 @@
+memory allocations
+spinlocks
+reference counting
+mprotect
+execve
+pipes
+synchronous writes
+sockets
+futex
+resource limits
+malloc
+memory overlapping
+dlopen
+cgroup memory
+epolll

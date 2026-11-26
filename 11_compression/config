@@ -1,0 +1,16 @@
+corpus = ../1_corpus/data/programming-large/corpus.bin
+output = build/positional.idx
+
+codec = vb
+memory_mib = 2048
+skip_stride = 0
+mode = lemma
+
+search_limit = 50
+search_offset = 0
+search_engine = search
+traversal = linear
+
+experiment_output = data/measurement
+queries = data/queries.txt
+repeats = 7

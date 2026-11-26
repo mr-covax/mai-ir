@@ -34,6 +34,17 @@ def test_clang_static_reference():
     assert document.text == "AST Matchers\n\nrecordDecl()"
 
 
+def test_lldb_doxygen_reference():
+    document = extract_document(
+        '<title>LLDB: Debugger Class Reference</title><nav>Navigation</nav>'
+        '<div id="doc-content"><p>Debugger class documentation.</p></div>',
+        "lldb",
+    )
+
+    assert document.title == "LLDB: Debugger Class Reference"
+    assert document.text == "Debugger class documentation."
+
+
 @pytest.mark.parametrize("source", ["gcc", "glibc", "binutils", "gdb"])
 def test_gnu_sources(source):
     html = """
